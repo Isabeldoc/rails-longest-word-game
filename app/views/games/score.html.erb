@@ -1,0 +1,11 @@
+<h1>Result</h1>
+<div>
+  <% if (@user_answer.chars - @letters.split).empty? && @word["found"] %>
+    <p> <%= "Congratulations!#{@user_answer.upcase} is a valid english word!" %> </p>
+  <% elsif (@user_answer.chars - @letters.split).empty? %>
+    <p> <%= "Sorry, but >#{@user_answer}< does not seem to be a valid english word" %> </p>
+  <% else %>
+    <p> <%= "Sorry, but >#{@user_answer}< can't be build out of >#{@letters}<" %> </p>
+  <% end %>
+</div>
+<%= link_to "Play again", new_path, class:"text-decoration-none btn btn-primary" %>
